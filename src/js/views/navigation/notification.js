@@ -31,6 +31,7 @@ Views.Navigation.Notification = function(t) {
     Notification.prototype.events = {
         click: "goToFlow",
         "click .mark-as-read": "markAsRead",
+        "click .mark-as-unread": "markAsUnread",
         "click .ignore-team": "ignoreTeam"
     };
     Notification.prototype.modelEvents = {
@@ -122,7 +123,7 @@ Views.Navigation.Notification = function(t) {
     Notification.prototype.goToFlow = function(e) {
         var t, n;
         n = $(e.target);
-        if (n.is(".mark-as-read")) {
+        if (n.is(".mark-as-read") || n.is(".mark-as-unread")) {
             return void 0;
         }
         t = this.model.message();
@@ -145,6 +146,10 @@ Views.Navigation.Notification = function(t) {
     Notification.prototype.markAsRead = function(e) {
         e.stopImmediatePropagation();
         return this.model.markAsRead();
+    };
+    Notification.prototype.markAsUnread = function(e) {
+        e.stopImmediatePropagation();
+        return this.model.markAsUnread();
     };
     Notification.prototype.ignoreTeam = function(e) {
         e.stopImmediatePropagation();

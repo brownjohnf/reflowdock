@@ -104,7 +104,8 @@ Views.Navigation.Tab = function(t) {
         t = e.chat;
         n = e.inbox;
         r = e.mentions;
-        this.$(".activity-indicator").toggleClass("activity-indicator-chat", t).toggleClass("activity-indicator-inbox", n).toggleClass("activity-indicator-mentions", r > 0).attr("data-mention-count", r);
+        this.$(".tab-name").toggleClass("tab-indicator-chat", t)
+        this.$(".activity-indicator").toggleClass("activity-indicator-inbox", n).toggleClass("activity-indicator-mentions", r > 0).attr("data-mention-count", r);
         return this.$el.toggleClass("has-activity", t || r > 0);
     };
     Tab.prototype.updateTitle = function(e, t) {

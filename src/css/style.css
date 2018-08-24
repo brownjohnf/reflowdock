@@ -7522,11 +7522,6 @@ body {
     white-space: nowrap
 }
 
-.tab-name.tab-indicator-chat {
-    font-weight: 900;
-    color: white;
-}
-
 .tab-name .emoji {
     vertical-align: -2px;
     height: 1.018rem;
@@ -7544,7 +7539,9 @@ body {
 
 .has-activity .tab-name {
     text-overflow: clip;
-    margin-right: 1.357rem
+    margin-right: 1.357rem;
+    font-weight: 900;
+    color: white;
 }
 
 .current.has-activity .tab-name {
